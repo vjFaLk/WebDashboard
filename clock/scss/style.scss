@@ -1,0 +1,40 @@
+@import "compass/css3";
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#bar-clock {
+  .hour, .minutes, .seconds {
+    background: #F6F6F6;
+    width: 40px;
+    height: 180px;
+    float: left;
+    margin-right: 0.5em;
+    position: relative;
+  }
+  
+  .seconds { margin-right: 0; } 
+  
+  .time {
+    display: block;
+    background: #CCC;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    transition: height 0.1s linear;
+  }
+  
+  #human-time {
+    clear: left;
+    text-align: center;
+    font-size: 2.2em;
+    padding-top: 0.3em;
+    color: #CCC;
+  }
+}

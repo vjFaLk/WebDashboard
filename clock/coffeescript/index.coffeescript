@@ -1,0 +1,39 @@
+$seconds    = $('.seconds .time')
+$minutes    = $('.minutes .time')
+$hour       = $('.hour .time')
+$humanTime  = $('#human-time')
+clockHeight = $('#bar-clock .hour').height()
+
+# Returns a current time object
+getTime = ->
+  dateTime = new Date()
+  
+  # Time object
+  hour:    dateTime.getHours()
+  minutes: dateTime.getMinutes()
+  seconds: dateTime.getSeconds()
+
+# Set column height based on time
+renderTime = ($el, time, duration) ->
+  $el.height -> (clockHeight * time) / duration
+
+# Format time at 2 digits
+formatTime = (time) -> if time < 10 then "0" + time else time
+
+# The master function MASTER! MASTER!
+updateTime = (time) ->
+  renderTime $seconds, time.seconds, 59
+  renderTime $minutes, time.minutes, 59
+  renderTime $hour,    time.hour,    23
+  
+  # Readable time for puny human beings
+  $humanTime.text ->
+    separator = ' '
+    formatTime(time.hour)    + separator + 
+    formatTime(time.minutes) + separator + 
+    formatTime(time.seconds)
+
+# It keeps everything running
+t = setInterval -> 
+      updateTime(getTime())
+    , 1000
