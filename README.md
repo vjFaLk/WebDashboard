@@ -1,7 +1,7 @@
 # WebDashboard
 A dashboard for monitoring network activities and controlling torrent client remotely
 
-![alt tag](http://i.imgur.com/a1KFSR8.png)
+![alt tag](http://i.imgur.com/8u166Hn.png)
 
 
 * Each section in the dashboard is just a unscrollable iframe set at a certain position.
