@@ -10,7 +10,7 @@ A dashboard for monitoring network activities and controlling torrent client rem
 
 * Made for 1080p displays, doesn't look as good on smaller resolutions. 
 
-* Hosted using a super-light web server called Mongoose
+* Hosted using apache on a Raspberry Pi 2
 
 
 
